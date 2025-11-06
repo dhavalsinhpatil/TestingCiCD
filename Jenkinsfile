@@ -11,13 +11,13 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo 'Running QA test scripts...'
-                sh 'python3 test_script.py'
+                bat 'python test_script.py'
             }
         }
 
         stage('Post Results') {
             steps {
-                echo 'All tests executed successfully ✅'
+                echo '✅ All tests executed successfully'
             }
         }
     }
