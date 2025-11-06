@@ -8,10 +8,17 @@ pipeline {
             }
         }
 
+        stage('Compile Java Code') {
+            steps {
+                echo 'Compiling Java test file...'
+                bat 'javac TestSuite.java'
+            }
+        }
+
         stage('Run Tests') {
             steps {
                 echo 'Running QA test scripts...'
-                bat 'python test_script.py'
+                bat 'java TestSuite'
             }
         }
 
